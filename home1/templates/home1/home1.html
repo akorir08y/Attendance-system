@@ -1,0 +1,46 @@
+{% extends 'base4.html' %}
+{% load static %}
+{% block head %}
+<center><h1>Home</h1></center>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class = "row">
+        <div class ="col-md-8">
+            <form method ="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="form-group">
+                    <button class=" btn btn-md btn-primary btn" type="submit">submit</button>
+                </div>
+            </form>
+            <h2>{{title}}</h2>
+            {% for new_post1 in posts %}
+            <h2>{{ new_post1.title }}</h2>
+            <p>{{ new_post1.comment }}</p>
+            <p>Posted by {{ new_post1.user }} on {{ new_post1.created }}</p>
+            {% endfor %}
+        </div>
+        <div class="col-md-4">
+            <h3>Other People</h3>
+            {% for user in users %}
+            <a href="{% url 'TTU_SYSTEM:view_profile_with_pk' id=user.id %}"><h4>{{ user.username }}</h4></a>
+            {% if user not in friends %}
+            <a href="{% url 'home1:change_friend' operation='add' id=user.id %}">
+            <button class="btn btn-md btn-success btn">Add friend</button>
+            </a>
+            {% endif %}
+            {% endfor %}
+            <h3>Friends</h3>
+            {% for friend in friends %}
+            <a href="{% url 'TTU_SYSTEM:view_profile_with_pk' id=user.id %}"><h4>{{ friend.username }}</h4></a>
+            <a href="{% url 'home1:change_friend' operation='remove' id=friend.id %}">
+             <button class="btn btn-md btn-danger btn">Remove friend</button>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

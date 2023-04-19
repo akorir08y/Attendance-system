@@ -1,0 +1,15 @@
+{
+    "python.linting.enabled": false,
+    "files.autoSave": "onFocusChange",
+    "editor.fontFamily": "Consolas, 'Times new roman', monospace",
+    "editor.tabSize": 4,
+    "editor.renderWhitespace": "none",
+    "editor.cursorStyle": "line",
+    "editor.multiCursorModifier": "alt",
+    "editor.insertSpaces": true,
+    "editor.wordWrap": "on",
+    "files.associations": {},
+    "explorer.openEditors.visible": 9,
+    "editor.fontSize": 14,
+    "python.pythonPath": "C:\\Program Files\\Python37\\python.exe"
+}

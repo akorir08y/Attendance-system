@@ -1,0 +1,27 @@
+{% extends 'base4.html' %}
+{% load static %}
+{% block head %}
+<center><h1>Student Login</h1></center>
+{% endblock %}
+
+{% block body%}
+		<center>
+		<div class ="jumbotron">
+            <div class="container">
+		    <form class="Form-Register" method="POST" action="#" enctype="multiport/form-data">
+			{% csrf_token %}
+			<div class="form-group">
+			    Username:{{form.username}}
+			</div>
+			<div class="form-group">
+			    password: {{form.password}}
+			</div>
+			<div class="form-group">
+			<button class=" btn btn-lg btn-primary btn" type="submit">Login</button>
+			</div>
+            </form>
+        
+			</div>
+		</div>
+		</center>
+{% endblock %}

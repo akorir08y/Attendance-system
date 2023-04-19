@@ -1,0 +1,22 @@
+{% extends 'base4.html' %}
+{% block head %}
+<center><h1 class = "form-heading">Student Registration</h1></center>
+{% endblock %}
+
+{% block body %}
+            <div class ="jumbotron">
+            <div class="container">
+                    
+                    <form method="POST" action="#">
+                    
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="form-group">
+                    <button class=" btn btn-lg btn-primary btn" type="submit">Submit</button>
+					</div>
+                    </form>
+        
+            </div>
+            </div>
+
+{% endblock %}

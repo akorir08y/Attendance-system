@@ -1,0 +1,16 @@
+{% extends 'base4.html' %}
+
+{% block head %}
+<h1>Groups</h1>
+{% endblock %}
+
+{% block body%}
+<div class="container">
+    <div class="jumbotron">
+    {% for group on groups %}
+    {{ group.title }}
+    {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

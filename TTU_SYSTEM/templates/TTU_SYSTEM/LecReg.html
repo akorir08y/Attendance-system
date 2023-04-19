@@ -1,0 +1,25 @@
+{% extends 'base2.html' %}
+
+{% block head %}
+<center><h1>Lecturer Registration</h1></center>
+{% endblock %}
+
+{% block body %}
+    <div class ="jumbotron">
+        <div class="container">
+            
+            <form method="post" action="#">
+            
+            {% csrf_token %}
+            <div class="form-group">
+            {{ form.as_p }}
+            
+            </div>
+            <div class="form-group">
+            <button class=" btn btn-lg btn-primary btn" type="submit">Submit</button>
+            </div>
+            </form>
+
+        </div>
+    </div>
+{% endblock %}

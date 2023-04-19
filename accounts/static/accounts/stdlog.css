@@ -1,0 +1,12 @@
+body{
+	background-image: url(imagess.jpg);
+	background-size: cover;
+    background-repeat: no-repeat;
+}
+
+div{
+	width:50%;
+	position:relative;
+	top:100px;
+	left:150px;
+}

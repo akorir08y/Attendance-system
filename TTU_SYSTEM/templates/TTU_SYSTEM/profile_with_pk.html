@@ -1,0 +1,22 @@
+{% extends 'base4.html' %}
+
+{% block head %}
+<h1>Profile</h1>
+{% endblock %}
+
+{% block body%}
+<div class="container">
+    <div class="jumbotron">
+    <img src="{{ user.user_profile.your_image.url }}" class="img-thumbnail" alt="profile-image" width="240">
+    <p>Username:{{ user}}</p><br>
+    <p>Role:{{ user.user_profile.role }}</p><br>
+    <p>First name:{{ user.first_name }}</p><br>
+    <p>Last name:{{ user.last_name }}</p><br>
+    <p>email:{{ user.email }}</p><br>
+    <p>reg_no:{{ user.user_profile.reg_no }}</p><br>
+    <p>year:{{ user.user_profile.year }}</p><br>
+    <p>course:{{ user.user_profile.course }}</p><br>
+    </div>
+</div>
+
+{% endblock %}

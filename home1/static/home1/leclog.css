@@ -1,0 +1,16 @@
+body{
+	background-image: url(imagess.jpg);
+	background-size: cover;
+    background-repeat: no-repeat;
+}
+
+div{
+	width:50%;
+	position:relative;
+	top:100px;
+	left:150px;
+}
+input[class=btn],[type=submit]:hover {
+    background-color: #45a049;
+	width:50%;
+}

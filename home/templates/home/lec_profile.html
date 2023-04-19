@@ -1,0 +1,21 @@
+{% extends 'base2.html' %}
+
+{% block head %}
+<h1>Profile</h1>
+{% endblock %}
+
+{% block body%}
+<div class="container">
+    <div class="jumbotron">
+    <img src="{{ user.lecprofile.your_image.url }}" class="img-thumbnail" alt="profile-image" width="240">
+    <p>Username:{{ user}}</p><br>
+    <p>First name:{{ user.first_name }}</p><br>
+    <p>Last name:{{ user.last_name }}</p><br>
+    <p>email:{{ user.email }}</p><br>
+    <p>Employee_no:{{ user.lecprofile.Employee_no }}</p><br>
+    <p>Department:{{ user.lecprofile.Department }}</p><br>
+    <p>Unit:{{ user.lecprofile.Unit }}</p><br>
+    </div>
+</div>
+
+{% endblock %}

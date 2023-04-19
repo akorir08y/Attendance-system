@@ -1,0 +1,33 @@
+{% extends 'base2.html' %}
+{% block head %}
+<center><h1>Home</h1></center>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+        <div class = "row">
+            <div class ="col-md-8">
+                <form method ="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="form-group">
+                        <button class=" btn btn-md btn-primary btn" type="submit">submit</button>
+                    </div>
+                </form>
+                <h2>{{title}}</h2>
+                {% for new_post in posts %}
+                <h2>{{ new_post.title }}</h2>
+                <p>{{ new_post.comment }}</p>
+                <p>Posted by {{ new_post.user }} on {{ new_post.created }}</p>
+                {% endfor %}
+            </div>
+            <div class="col-md-4">
+                <h2>Other People</h2>
+                {% for user in users %}
+                <a href="{% url 'TTU_SYSTEM:lec_profile_with_pk' id=user.id  %}"><h3>{{ user.username }}</h3></a>
+    
+                {% endfor %}
+            </div>
+        </div>
+</div>
+{% endblock %}

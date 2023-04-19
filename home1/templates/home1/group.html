@@ -1,0 +1,45 @@
+{% extends 'base4.html' %}
+
+{% block head %}
+<h1>Groups</h1>
+{% endblock %}
+
+{% block body%}
+<div class="container">
+    <div class="row">
+    <div class ="col-md-8">
+        <form method ="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="form-group">
+                <button class=" btn btn-md btn-primary btn" type="submit">submit</button>
+            </div>
+        </form>
+            <h2>{{title}}</h2>
+            {% for new_post2 in posts %}
+            <h2>{{ new_post2.title }}</h2>
+            <p>{{ new_post2.comment }}</p>
+            <p>Posted by {{ new_post2.user }} on {{ new_post2.created }}</p>
+            {% endfor %}
+    </div>
+    <div class="col-md-4">
+        <h3>Other People</h3>
+        {% for user in users %}
+          <a href="{% url 'lec_account:view_profile_with_pk' id=user.id %}"><h4>{{ user.username }}</h4></a>
+        {% if user not in groups %}
+            <a href="{% url 'home1:group' operation='add' id=user.id %}">
+            <button class="btn btn-md btn-success btn">Add to group</button>
+            </a>
+        {% endif %}
+        {% endfor %}
+        {% for group in groups %}
+        <a href="{% url 'lec_account:view_profile_with_pk' id=user.id %}"><h4>{{ group.username }}</h4></a>
+        <a href="{% url 'home1:group' operation='remove' id=group.id %}">
+         <button class="btn btn-md btn-danger btn">Remove group member</button>
+        </a>
+        {% endfor %}
+    </div>
+    </div>
+</div>
+
+{% endblock %}
